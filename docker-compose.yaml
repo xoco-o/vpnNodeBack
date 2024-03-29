@@ -7,7 +7,7 @@ services:
       POSTGRES_USER: user123
       POSTGRES_DB: db123
   app:
-    image: my-node-app
+    image: vpn-node-back
     ports:
       - 13000:3000
   openvpn:
