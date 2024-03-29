@@ -2,7 +2,7 @@
 GET http://localhost:13000/setup
 
 ###
-GET http://localhost:13000
+GET http://localhost:3000
 
 ###
 POST http://localhost:13000/

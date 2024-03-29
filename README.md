@@ -1,2 +1,2 @@
-# docker-compose-example
+# docker-compose
  dockerized nodejs express & postgreSQL CRUD backend
