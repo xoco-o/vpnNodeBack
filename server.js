@@ -9,9 +9,18 @@ app.use(express.json())
 //routes
 app.get('/', async (req, res) => {
     try {
+        res.send('Amjilttai');
+    } catch (err) {
+        console.log(err)
+        return res.status(500).send('Aldaa /');
+    }
+})
+
+app.get('/openvpn', async (req, res) => {
+    try {
         /*const data = await pool.query('SELECT * FROM schools')
         res.status(200).send(data.rows)*/
-        /*exec('docker exec -it openvpn-server sh /tmp/openvpn-status.log', (error, stdout, stderr) => {
+        exec('docker exec -it openvpn-server sh /tmp/openvpn-status.log', (error, stdout, stderr) => {
             if (error) {
                 console.error(`Error executing command: ${error.message}`);
                 return res.status(500).send('Error executing command');
@@ -21,13 +30,13 @@ app.get('/', async (req, res) => {
                 return res.status(500).send('Command stderr');
             }
             // Send the response
-            console.error(`Success response: ${stderr}`);
-            // res.send(stdout);
-        });*/
+            console.log(`Success response: ${stderr}`);
+            res.send(stdout);
+        });
         // return res.status(500).send('helloooo');
     } catch (err) {
         console.log(err)
-        return res.status(500).send('Aldaa /');
+        return res.status(500).send('Aldaa /openvpn');
     }
 })
 
